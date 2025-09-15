@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
+import Ribbons from './Ribbons';
 
 const Hero: React.FC = () => {
   const trustedLogos = [
@@ -15,19 +16,27 @@ const Hero: React.FC = () => {
   return (
     <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 z-[1]">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full translate-x-1/2 translate-y-1/2"></div>
       </div>
+      
+      {/* S-curved Animated Ribbons - positioned after the background patterns but before content */}
+      <div className="absolute inset-0 z-[2]" style={{ pointerEvents: 'none' }}>
+        <Ribbons className="z-[2]" />
+      </div>
 
       <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-[5]">
           {/* Left Column - Content */}
           <div className="space-y-8">
-            <div className="space-y-6">
+            <div className="space-y-6 relative">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Utavu Foundation
-                <span className="block text-blue-600">Research & Innovation</span>
+                <span className="block">
+                  <span className="text-utavuGreen">Research</span> & 
+                  <span className="text-utavuPurple"> Innovation</span>
+                </span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
@@ -41,19 +50,19 @@ const Hero: React.FC = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="btn-primary flex items-center justify-center space-x-2 group">
+              <Link to="/contact" className="btn-primary flex items-center justify-center space-x-2 group relative z-10">
                 <span>Partner with Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Link to="/focus-areas" className="btn-secondary flex items-center justify-center space-x-2">
+              <Link to="/focus-areas" className="btn-secondary flex items-center justify-center space-x-2 relative z-10">
                 <span>Explore Focus Areas</span>
                 <Play className="w-4 h-4" />
               </Link>
             </div>
 
             {/* Trusted Partners */}
-            <div className="pt-8">
+            <div className="pt-8 relative z-10">
               <p className="text-sm text-gray-500 mb-4 font-medium">Trusted by leading organizations</p>
               <div className="flex flex-wrap items-center gap-6 opacity-60">
                 {trustedLogos.map((logo, index) => (

@@ -52,8 +52,8 @@ const QuickIntro: React.FC<QuickIntroProps> = ({ onScheduleConsultation }) => {
             <div className="space-y-6">
               {highlights.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-blue-600" />
+                  <div className={`flex-shrink-0 w-12 h-12 ${index === 2 ? 'bg-utavuGreen/20' : 'bg-blue-100'} rounded-lg flex items-center justify-center`}>
+                    <item.icon className={`w-6 h-6 ${index === 2 ? 'text-utavuGreen' : 'text-blue-600'}`} />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
@@ -87,7 +87,7 @@ const QuickIntro: React.FC<QuickIntroProps> = ({ onScheduleConsultation }) => {
               <div className="space-y-4">
                 {goals.map((goal, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-0.5">
+                    <div className={`flex-shrink-0 w-6 h-6 ${index % 2 === 0 ? 'bg-accent' : 'bg-utavuPurple'} rounded-full flex items-center justify-center mt-0.5`}>
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
                     <p className="text-gray-700 font-medium">{goal}</p>

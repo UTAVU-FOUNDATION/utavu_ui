@@ -60,11 +60,11 @@ const Footer: React.FC = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-accent" />
+                <Mail className="w-5 h-5 text-utavuPurple" />
                 <span className="text-gray-300">info@utavu.org</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-accent" />
+                <Phone className="w-5 h-5 text-utavuGreen" />
                 <span className="text-gray-300">+254 700 123 456</span>
               </div>
               <div className="flex items-start space-x-3">
@@ -82,7 +82,10 @@ const Footer: React.FC = () => {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors"
+                  className={`w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center ${
+                    social.name === 'Facebook' || social.name === 'Twitter' ? 'hover:bg-utavuPurple' : 
+                    social.name === 'LinkedIn' || social.name === 'YouTube' ? 'hover:bg-utavuGreen' : 'hover:bg-accent'
+                  } transition-colors`}
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -126,7 +129,7 @@ const Footer: React.FC = () => {
               />
               <button
                 type="submit"
-                className="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg transition-colors flex items-center space-x-2"
+                className="bg-utavuPurple hover:bg-utavuPurple/90 text-white px-6 py-3 rounded-lg transition-colors flex items-center space-x-2"
               >
                 <Send className="w-4 h-4" />
                 <span className="hidden sm:inline">Subscribe</span>

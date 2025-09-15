@@ -39,7 +39,7 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
       description: 'Hands-on workshop on climate-smart agriculture technologies and sustainable farming practices.',
       attendees: '100+',
       status: 'Early Bird',
-      color: 'from-green-500 to-green-600'
+      color: 'from-utavuGreen to-green-600'
     },
     {
       title: 'Research Methodology Masterclass',
@@ -50,7 +50,7 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
       description: 'Advanced training on research design, data collection, and impact evaluation for development practitioners.',
       attendees: '50',
       status: 'Limited Seats',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-purple-500 to-utavuPurple'
     }
   ];
 
@@ -172,7 +172,7 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
               <div className="text-gray-600">Events Hosted</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-purple-600">15</div>
+              <div className="text-3xl font-bold text-utavuPurple">15</div>
               <div className="text-gray-600">Countries Reached</div>
             </div>
           </div>

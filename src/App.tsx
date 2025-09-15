@@ -24,6 +24,7 @@ import CaseStudies from './pages/CaseStudies';
 import Library from './pages/Library';
 import InsightsPage from './pages/InsightsPage';
 import './styles/globals.css';
+import './styles/ribbons.css';
 
 function App() {
   return (

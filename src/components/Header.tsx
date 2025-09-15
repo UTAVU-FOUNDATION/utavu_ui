@@ -155,7 +155,7 @@ const Header: React.FC = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Link to="/contact" className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg">
+              <Link to="/contact" className="bg-gradient-to-r from-utavuGreen to-utavuPurple text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg">
                 Partner with Us
               </Link>
             </div>

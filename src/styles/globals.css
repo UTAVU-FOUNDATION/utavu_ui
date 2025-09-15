@@ -11,6 +11,8 @@
   --bg: #FFFFFF;
   --muted: #6B7280;
   --surface: #F8FAFC;
+  --utavu-green: #32CD32;
+  --utavu-purple: #8A2BE2;
 }
 
 @layer base {

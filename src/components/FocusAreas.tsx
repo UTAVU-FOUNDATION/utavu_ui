@@ -8,37 +8,43 @@ const FocusAreas: React.FC = () => {
       icon: Heart,
       title: 'Health Innovation',
       description: 'Digital health solutions, medical research, and healthcare accessibility initiatives that improve community wellbeing.',
-      color: 'bg-red-100 text-red-600'
+      color: 'bg-red-100 text-red-600',
+      path: '/focus-areas/health-innovation'
     },
     {
       icon: GraduationCap,
       title: 'Education Technology',
       description: 'Learning platforms, educational tools, and capacity building programs that enhance knowledge transfer.',
-      color: 'bg-blue-100 text-blue-600'
+      color: 'bg-blue-100 text-blue-600',
+      path: '/focus-areas/education-technology'
     },
     {
       icon: Sprout,
       title: 'Agricultural Innovation',
       description: 'Smart farming solutions, food security initiatives, and sustainable agriculture practices.',
-      color: 'bg-green-100 text-green-600'
+      color: 'bg-green-100 text-utavuGreen',
+      path: '/focus-areas/agricultural-innovation'
     },
     {
       icon: Leaf,
       title: 'Environmental Solutions',
       description: 'Climate change mitigation, sustainability projects, and environmental conservation technologies.',
-      color: 'bg-emerald-100 text-emerald-600'
+      color: 'bg-emerald-100 text-emerald-600',
+      path: '/focus-areas/environmental-solutions'
     },
     {
       icon: Users,
       title: 'Social Innovation',
       description: 'Community development, social entrepreneurship, and inclusive innovation for marginalized populations.',
-      color: 'bg-purple-100 text-purple-600'
+      color: 'bg-purple-100 text-utavuPurple',
+      path: '/focus-areas/social-innovation'
     },
     {
       icon: Zap,
       title: 'Technology Access',
       description: 'Digital inclusion, infrastructure development, and technology adoption in underserved communities.',
-      color: 'bg-yellow-100 text-yellow-600'
+      color: 'bg-yellow-100 text-yellow-600',
+      path: '/focus-areas/technology-access'
     }
   ];
 

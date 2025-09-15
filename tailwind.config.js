@@ -14,6 +14,8 @@ export default {
         },
         accent: '#00BFA6',
         surface: '#F8FAFC',
+        utavuGreen: '#32CD32', // Added green color
+        utavuPurple: '#8A2BE2', // Added purple color
       },
       spacing: {
         '4': '1rem',
