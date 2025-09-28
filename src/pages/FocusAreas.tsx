@@ -57,7 +57,7 @@ const FocusAreas: React.FC = () => {
   return (
     <div className="pt-32 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
+  <section className="bg-gradient-to-br from-blue-50 to-white section-padding" data-reveal data-reveal-from="bottom" data-reveal-stagger>
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
@@ -72,7 +72,7 @@ const FocusAreas: React.FC = () => {
       </section>
 
       {/* Focus Areas Grid */}
-      <section className="section-padding bg-white">
+  <section className="section-padding bg-white" data-reveal data-reveal-from="bottom" data-reveal-delay="120">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
@@ -133,7 +133,7 @@ const FocusAreas: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-surface">
+  <section className="section-padding bg-surface" data-reveal data-reveal-from="bottom" data-reveal-delay="220">
         <div className="container-custom">
           <div className="text-center space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

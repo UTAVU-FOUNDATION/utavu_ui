@@ -66,7 +66,7 @@ const OurStory: React.FC = () => {
   return (
     <div className="pt-32 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
+  <section className="bg-gradient-to-br from-blue-50 to-white section-padding" data-reveal data-reveal-from="bottom" data-reveal-stagger>
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
@@ -81,7 +81,7 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Origin Story */}
-      <section className="section-padding bg-white">
+  <section className="section-padding bg-white" data-reveal data-reveal-from="left" data-reveal-delay="100">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
@@ -128,7 +128,7 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-surface">
+  <section className="section-padding bg-surface" data-reveal data-reveal-from="bottom" data-reveal-delay="160">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
@@ -174,7 +174,7 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-white">
+  <section className="section-padding bg-white" data-reveal data-reveal-from="bottom" data-reveal-delay="220">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
@@ -200,7 +200,7 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Impact Summary */}
-      <section className="section-padding bg-surface">
+  <section className="section-padding bg-surface" data-reveal data-reveal-from="bottom" data-reveal-delay="280">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">
@@ -236,7 +236,7 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-white">
+  <section className="section-padding bg-white" data-reveal data-reveal-from="bottom" data-reveal-delay="340">
         <div className="container-custom">
           <div className="text-center space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

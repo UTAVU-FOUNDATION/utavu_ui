@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -14,8 +15,16 @@ export default {
         },
         accent: '#00BFA6',
         surface: '#F8FAFC',
-        utavuGreen: '#32CD32', // Added green color
-        utavuPurple: '#8A2BE2', // Added purple color
+        utavuGreen: {
+          DEFAULT: '#32CD32',
+          light: '#90EE90',
+          dark: '#228B22',
+        },
+        utavuPurple: {
+          DEFAULT: '#8A2BE2',
+          light: '#DDA0DD',
+          dark: '#4B0082',
+        },
       },
       spacing: {
         '4': '1rem',

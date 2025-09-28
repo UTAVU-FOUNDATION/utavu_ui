@@ -26,15 +26,33 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
-      <QuickIntro onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
-      <FocusAreas />
-      <Services onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
-      <CaseStudies />
-      <Partners onBecomePartner={() => setIsPartnerModalOpen(true)} />
-      <Testimonials />
-      <Events onRegisterEvent={openRegistrationModal} />
-      <Insights onSubscribe={() => setIsSubscriptionModalOpen(true)} />
-      <ContactDonate />
+      <div data-reveal data-reveal-from="bottom" data-reveal-stagger>
+        <QuickIntro onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-stagger data-reveal-delay="80">
+        <FocusAreas />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="120">
+        <Services onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="160">
+        <CaseStudies />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="200" data-reveal-stagger>
+        <Partners onBecomePartner={() => setIsPartnerModalOpen(true)} />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="240">
+        <Testimonials />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="280">
+        <Events onRegisterEvent={openRegistrationModal} />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="320">
+        <Insights onSubscribe={() => setIsSubscriptionModalOpen(true)} />
+      </div>
+      <div data-reveal data-reveal-from="bottom" data-reveal-delay="360">
+        <ContactDonate />
+      </div>
       
       {/* Modals */}
       <Modal

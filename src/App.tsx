@@ -24,11 +24,12 @@ import CaseStudies from './pages/CaseStudies';
 import Library from './pages/Library';
 import InsightsPage from './pages/InsightsPage';
 import './styles/globals.css';
-import './styles/ribbons.css';
+import ScrollRevealManager from './components/ScrollRevealManager';
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <ScrollRevealManager />
       <Header />
       <main>
         <Routes>

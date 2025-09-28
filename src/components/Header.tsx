@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Mail, Clock } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Clock, Sun, Moon } from 'lucide-react';
+// Removed PrismaticEffect usage for performance / design refinement
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('utavu-theme');
+      if (stored) return stored === 'dark';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +24,20 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Apply theme to <html>
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add('dark');
+      localStorage.setItem('utavu-theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('utavu-theme', 'light');
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark(d => !d);
 
   const focusAreas = [
     { name: 'Health Innovation', description: 'Digital health solutions and medical research', path: '/focus-areas/health-innovation' },
@@ -64,7 +87,7 @@ const Header: React.FC = () => {
             <div className="flex items-center">
               <Link to="/">
                 <img 
-                  src="/public/Screenshot from 2025-09-13 09-59-58.png" 
+                  src="/Screenshot from 2025-09-13 09-59-58.png" 
                   alt="Utavu Foundation" 
                   className="h-14 w-auto hover:scale-105 transition-transform duration-300"
                 />
@@ -153,20 +176,43 @@ const Header: React.FC = () => {
               <Link to="/contact" className="nav-link">Contact Us</Link>
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Link to="/contact" className="bg-gradient-to-r from-utavuGreen to-utavuPurple text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg">
+            {/* Right side controls */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle dark mode"
+                className="relative p-3 rounded-xl border border-gray-200/60 dark:border-gray-600 bg-white/70 dark:bg-white/10 backdrop-blur hover:bg-white/90 dark:hover:bg-white/20 transition-all group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-utavuPurple/30"
+              >
+                <Sun className={`w-5 h-5 text-yellow-500 transition-all ${isDark ? 'scale-0 opacity-0 absolute' : 'scale-100 opacity-100'}`} />
+                <Moon className={`w-5 h-5 text-blue-300 transition-all ${isDark ? 'scale-100 opacity-100' : 'scale-0 opacity-0 absolute'}`} />
+                <span className="sr-only">Toggle theme</span>
+              </button>
+              <Link
+                to="/contact"
+                className="btn-primary bg-gradient-to-r from-utavu-purple to-utavu-green shadow-md hover:shadow-xl hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-utavuPurple/30 whitespace-nowrap"
+                style={{backgroundImage:'linear-gradient(120deg,var(--utavu-purple) 0%,var(--utavu-green) 100%)'}}
+              >
                 Partner with Us
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex lg:hidden items-center space-x-2">
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle dark mode"
+                className="p-2 rounded-md hover:bg-white/30 dark:hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utavuPurple/40"
+              >
+                {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5 text-yellow-500" />}
+              </button>
+              <button
+                className="p-2 rounded-md hover:bg-white/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utavuPurple/40"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle navigation menu"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -178,7 +224,7 @@ const Header: React.FC = () => {
             <div className="flex items-center justify-between mb-8">
               <Link to="/">
                 <img 
-                  src="/public/Screenshot from 2025-09-13 09-59-58.png" 
+                  src="/Screenshot from 2025-09-13 09-59-58.png" 
                   alt="Utavu Foundation" 
                   className="h-12 w-auto"
                 />

@@ -1,0 +1,82 @@
+/* Prismatic Effect Styles */
+
+.prismatic-container {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.prismatic-glow {
+  position: absolute;
+  inset: -20px;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  filter: blur(15px);
+}
+
+.prismatic-container:hover .prismatic-glow {
+  opacity: 0.7;
+}
+
+.prismatic-container.scrolling .prismatic-glow {
+  opacity: 0.4;
+}
+
+.prismatic-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add prismatic edge effect */
+.prismatic-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(
+    135deg,
+    rgba(50, 205, 50, 0.2),
+    rgba(138, 43, 226, 0.2)
+  );
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor; /* For Safari support */
+  padding: 1px;
+  border-radius: inherit;
+}
+
+.prismatic-container:hover::before {
+  opacity: 1;
+}
+
+/* Higher intensity effects */
+.prismatic-container[data-intensity="high"]::before {
+  background: linear-gradient(
+    135deg,
+    rgba(50, 205, 50, 0.3),
+    rgba(138, 43, 226, 0.3)
+  );
+}
+
+.prismatic-container[data-intensity="high"]:hover .prismatic-glow {
+  opacity: 0.9;
+}
+
+/* Lower intensity effects */
+.prismatic-container[data-intensity="low"]::before {
+  background: linear-gradient(
+    135deg,
+    rgba(50, 205, 50, 0.1),
+    rgba(138, 43, 226, 0.1)
+  );
+}
+
+.prismatic-container[data-intensity="low"]:hover .prismatic-glow {
+  opacity: 0.5;
+}

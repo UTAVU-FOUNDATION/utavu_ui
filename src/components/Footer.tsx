@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="space-y-4">
               <img 
-                src="/public/Screenshot from 2025-09-13 09-59-58.png" 
+                src="/Screenshot from 2025-09-13 09-59-58.png" 
                 alt="Utavu Foundation" 
                 className="h-12 w-auto"
               />

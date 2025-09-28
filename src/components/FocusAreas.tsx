@@ -49,14 +49,14 @@ const FocusAreas: React.FC = () => {
   ];
 
   return (
-    <section id="focus-areas" className="section-padding bg-surface">
+    <section id="focus-areas" className="section-padding bg-pattern">
       <div className="container-custom">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-            Our Focus Areas
+        <div className="text-center space-y-4 mb-16 fade-in-up">
+          <h2 className="section-heading mx-auto">
+            Our <span className="highlight-green">Focus</span> Areas
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We concentrate our efforts on key sectors where innovation can create the most significant 
+            We concentrate our efforts on key sectors where <span className="highlight-purple">innovation</span> can create the most significant 
             and sustainable impact for communities.
           </p>
         </div>
@@ -65,35 +65,38 @@ const FocusAreas: React.FC = () => {
           {focusAreas.map((area, index) => (
             <div 
               key={index}
-              className="card group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="card group glow-on-hover slide-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="space-y-4">
-                <div className={`w-16 h-16 rounded-xl ${area.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <area.icon className="w-8 h-8" />
-                </div>
-                
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                    {area.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {area.description}
-                  </p>
-                </div>
+                <div className="space-y-4">
+                  <div className={`w-16 h-16 rounded-xl ${area.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <area.icon className="w-8 h-8" />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {area.description}
+                    </p>
+                  </div>
 
-                <div className="pt-4">
-                  <Link to={area.path} className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center space-x-1 group-hover:space-x-2 transition-all">
-                    <span>Learn more</span>
-                    <span className="text-lg">→</span>
-                  </Link>
+                  <div className="pt-4">
+                    <Link to={area.path} className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center space-x-1 group-hover:space-x-2 transition-all">
+                      <span>Learn more</span>
+                      <span className="text-lg">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link to="/focus-areas" className="btn-secondary">
+        <div className="section-divider"></div>
+        
+        <div className="text-center mt-12 fade-in-up">
+          <Link to="/focus-areas" className="btn-secondary glow-on-hover">
             View All Focus Areas
           </Link>
         </div>
