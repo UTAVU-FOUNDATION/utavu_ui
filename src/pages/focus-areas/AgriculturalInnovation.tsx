@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sprout, Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { Sprout, ArrowRight } from 'lucide-react';
 
 const AgriculturalInnovation: React.FC = () => {
   const initiatives = [

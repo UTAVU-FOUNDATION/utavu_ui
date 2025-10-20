@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { Heart, ArrowRight } from 'lucide-react';
 
 const HealthInnovation: React.FC = () => {
   const initiatives = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { GraduationCap, ArrowRight } from 'lucide-react';
 
 const EducationTechnology: React.FC = () => {
   const initiatives = [

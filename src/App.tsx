@@ -15,7 +15,6 @@ import Events from './pages/Events';
 import OurStory from './pages/about/OurStory';
 import MissionVision from './pages/about/MissionVision';
 import GoalsObjectives from './pages/about/GoalsObjectives';
-import Insights from './pages/Insights';
 import Partnerships from './pages/Partnerships';
 import Testimonials from './pages/Testimonials';
 import Donate from './pages/Donate';
