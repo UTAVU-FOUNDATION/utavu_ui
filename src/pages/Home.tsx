@@ -1,211 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import QuickIntro from '../components/QuickIntro';
-import FocusAreas from '../components/FocusAreas';
-import Services from '../components/Services';
-import CaseStudies from '../components/CaseStudies';
-import Partners from '../components/Partners';
-import Testimonials from '../components/Testimonials';
-import Events from '../components/Events';
-import Insights from '../components/Insights';
-import ContactDonate from '../components/ContactDonate';
-import Modal from '../components/Modal';
+import HomeHighlights from '../components/HomeHighlights';
 
 const Home: React.FC = () => {
-  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
-  const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
-  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false);
-  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
-  const [currentEventTitle, setCurrentEventTitle] = useState('');
-
-  const openRegistrationModal = (eventTitle: string) => {
-    setCurrentEventTitle(eventTitle);
-    setIsRegistrationModalOpen(true);
-  };
-
   return (
     <>
       <Hero />
       <div data-reveal data-reveal-from="bottom" data-reveal-stagger>
-        <QuickIntro onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-stagger data-reveal-delay="80">
-        <FocusAreas />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="120">
-        <Services onScheduleConsultation={() => setIsConsultationModalOpen(true)} />
+        <HomeHighlights />
       </div>
       <div data-reveal data-reveal-from="bottom" data-reveal-delay="160">
-        <CaseStudies />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="200" data-reveal-stagger>
-        <Partners onBecomePartner={() => setIsPartnerModalOpen(true)} />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="240">
-        <Testimonials />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="280">
-        <Events onRegisterEvent={openRegistrationModal} />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="320">
-        <Insights onSubscribe={() => setIsSubscriptionModalOpen(true)} />
-      </div>
-      <div data-reveal data-reveal-from="bottom" data-reveal-delay="360">
-        <ContactDonate />
-      </div>
-      
-      {/* Modals */}
-      <Modal
-        isOpen={isConsultationModalOpen}
-        onClose={() => setIsConsultationModalOpen(false)}
-        title="Schedule a Consultation"
-      >
-        <form className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-            <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Organization</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Consultation Type</label>
-            <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-              <option>Research & Evaluation</option>
-              <option>Capacity Building</option>
-              <option>Innovation Support</option>
-              <option>Partnership Development</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-            <textarea rows={4} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-          </div>
-          <button type="submit" className="w-full btn-primary">Send Request</button>
-        </form>
-      </Modal>
-
-      <Modal
-        isOpen={isPartnerModalOpen}
-        onClose={() => setIsPartnerModalOpen(false)}
-        title="Become a Partner"
-      >
-        <form className="space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 sm:text-4xl">
+                Ready to Make an Impact?
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Join us in creating innovative solutions for sustainable development
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <Link 
+                  to="/partnerships"
+                  className="btn-primary px-8 py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-utavu-purple to-utavu-green hover:from-utavu-purple-dark hover:to-utavu-green-dark"
+                >
+                  Partner with Us
+                </Link>
+                <Link 
+                  to="/focus-areas"
+                  className="btn-secondary px-8 py-3 text-lg font-semibold rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur"
+                >
+                  Explore Our Work
+                </Link>
+              </div>
             </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-            <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Organization</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Partnership Type</label>
-            <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-              <option>Funding Partner</option>
-              <option>Implementation Partner</option>
-              <option>Research Collaboration</option>
-              <option>Technology Partner</option>
-              <option>Academic Partnership</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">How can we collaborate?</label>
-            <textarea rows={4} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-          </div>
-          <button type="submit" className="w-full btn-primary">Submit Request</button>
-        </form>
-      </Modal>
-
-      <Modal
-        isOpen={isSubscriptionModalOpen}
-        onClose={() => setIsSubscriptionModalOpen(false)}
-        title="Subscribe to Updates"
-      >
-        <form className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-            <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Name (Optional)</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Interests</label>
-            <div className="space-y-2">
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                <span className="text-sm">Research Updates</span>
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                <span className="text-sm">Event Notifications</span>
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                <span className="text-sm">Partnership Opportunities</span>
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                <span className="text-sm">Innovation Insights</span>
-              </label>
-            </div>
-          </div>
-          <button type="submit" className="w-full btn-primary">Subscribe</button>
-        </form>
-      </Modal>
-
-      <Modal
-        isOpen={isRegistrationModalOpen}
-        onClose={() => setIsRegistrationModalOpen(false)}
-        title={`Register for ${currentEventTitle}`}
-      >
-        <form className="space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-            <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Organization</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Role/Title</label>
-            <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Dietary Requirements (Optional)</label>
-            <textarea rows={2} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-          </div>
-          <button type="submit" className="w-full btn-primary">Complete Registration</button>
-        </form>
-      </Modal>
+        </section>
+      </div>
     </>
   );
 };

@@ -1,0 +1,35 @@
+/* This file contains only the theme customizations */
+:root {
+  /* Brand Colors - using direct HEX values */
+  --utavu-purple: #8A2BE2;
+  --utavu-purple-dark: #4B0082;
+  --utavu-green: #32CD32;
+  --utavu-green-dark: #228B22;
+}
+
+/* Component Styles */
+.btn-primary {
+  background-color: var(--utavu-purple);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--utavu-purple-dark);
+}
+
+/* Dark mode overrides */
+.dark .text-primary {
+  color: rgb(249 250 251);
+}
+
+.dark .text-secondary {
+  color: rgb(209 213 219);
+}
+
+.dark .bg-surface {
+  background-color: rgb(31 41 55);
+}

@@ -1,0 +1,10 @@
+/* Utility classes */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-utavuPurple to-utavuGreen;
+  }
+
+  .bg-gradient {
+    @apply bg-gradient-to-r from-utavuPurple to-utavuGreen;
+  }
+}

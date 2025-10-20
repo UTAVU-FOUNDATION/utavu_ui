@@ -1,0 +1,138 @@
+/* Theme CSS Variables */
+:root {
+  /* Brand Colors */
+  --utavu-purple: #8A2BE2;
+  --utavu-purple-light: #DDA0DD;
+  --utavu-purple-dark: #4B0082;
+  --utavu-green: #32CD32;
+  --utavu-green-light: #90EE90;
+  --utavu-green-dark: #228B22;
+
+  /* Light mode defaults */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  
+  --border-primary: #E5E7EB;
+  --border-secondary: #D1D5DB;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F8FAFC;
+  --surface-tertiary: #F1F5F9;
+}
+
+/* Dark mode colors */
+.dark {
+  --bg-primary: #0E1116;
+  --bg-secondary: #1B2129;
+  --bg-tertiary: #242B35;
+  
+  --text-primary: #F9FAFB;
+  --text-secondary: #E5E7EB;
+  --text-tertiary: #D1D5DB;
+  
+  --border-primary: #374151;
+  --border-secondary: #4B5563;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  
+  --surface-primary: #1B2129;
+  --surface-secondary: #242B35;
+  --surface-tertiary: #2D3643;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-primary transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .bg-primary {
+    @apply bg-white dark:bg-[#0E1116] transition-colors duration-200;
+  }
+  
+  .bg-secondary {
+    @apply bg-gray-50 dark:bg-[#1B2129] transition-colors duration-200;
+  }
+  
+  .bg-tertiary {
+    @apply bg-gray-100 dark:bg-[#242B35] transition-colors duration-200;
+  }
+  
+  .text-primary {
+    @apply text-gray-900 dark:text-gray-50 transition-colors duration-200;
+  }
+  
+  .text-secondary {
+    @apply text-gray-600 dark:text-gray-300 transition-colors duration-200;
+  }
+  
+  .text-tertiary {
+    @apply text-gray-500 dark:text-gray-400 transition-colors duration-200;
+  }
+  
+  .border-primary {
+    @apply border-gray-200 dark:border-gray-700 transition-colors duration-200;
+  }
+  
+  .border-secondary {
+    @apply border-gray-300 dark:border-gray-600 transition-colors duration-200;
+  }
+  
+  .surface-primary {
+    @apply bg-white dark:bg-[#1B2129] shadow-sm dark:shadow-none transition-all duration-200;
+  }
+  
+  .surface-secondary {
+    @apply bg-gray-50 dark:bg-[#242B35] shadow dark:shadow-none transition-all duration-200;
+  }
+  
+  .surface-tertiary {
+    @apply bg-gray-100 dark:bg-[#2D3643] shadow-md dark:shadow-none transition-all duration-200;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-utavu-purple hover:bg-utavu-purple-dark text-white transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200;
+  }
+  
+  /* Cards */
+  .card {
+    @apply surface-primary rounded-xl p-6;
+  }
+  
+  /* Glass Effect */
+  .glass-effect {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm border border-white/20 dark:border-gray-700/20;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Transitions */
+.theme-transition {
+  @apply transition-all duration-200;
+}

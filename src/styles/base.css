@@ -1,0 +1,40 @@
+/* Base CSS Variables */
+:root {
+  /* Light mode */
+  --bg-primary: 255 255 255;
+  --bg-secondary: 248 250 252;
+  --bg-tertiary: 241 245 249;
+  
+  --text-primary: 17 24 39;
+  --text-secondary: 75 85 99;
+  --text-tertiary: 107 114 128;
+  
+  --border-primary: 229 231 235;
+  --border-secondary: 209 213 219;
+}
+
+.dark {
+  /* Dark mode */
+  --bg-primary: 14 17 22;
+  --bg-secondary: 27 33 41;
+  --bg-tertiary: 36 43 53;
+  
+  --text-primary: 249 250 251;
+  --text-secondary: 229 231 235;
+  --text-tertiary: 209 213 219;
+  
+  --border-primary: 55 65 81;
+  --border-secondary: 75 85 99;
+}
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-primary text-primary transition-colors duration-200;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}

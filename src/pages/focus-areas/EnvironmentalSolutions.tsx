@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import { Leaf, ArrowRight } from 'lucide-react';
 
 const EnvironmentalSolutions: React.FC = () => {
   const initiatives = [
@@ -39,18 +39,18 @@ const EnvironmentalSolutions: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 to-white section-padding">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto">
-              <Leaf className="w-10 h-10 text-emerald-600" />
+            <div className="w-20 h-20 bg-emerald-100/80 backdrop-blur-sm dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-emerald-100 dark:shadow-emerald-900/20">
+              <Leaf className="w-10 h-10 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Environmental Solutions
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Creating innovative solutions for climate change mitigation, sustainability projects, 
               and environmental conservation technologies that protect our planet.
             </p>
@@ -67,13 +67,13 @@ const EnvironmentalSolutions: React.FC = () => {
       </section>
 
       {/* Current Initiatives */}
-      <section className="section-padding bg-white">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Current Initiatives
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Our environmental solutions are addressing critical challenges in climate change, 
               renewable energy, and environmental conservation.
             </p>
@@ -81,25 +81,25 @@ const EnvironmentalSolutions: React.FC = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {initiatives.map((initiative, index) => (
-              <div key={index} className="card group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="card group bg-white dark:bg-gray-800 hover:shadow-lg dark:hover:shadow-2xl dark:hover:shadow-emerald-900/10 transition-all duration-300">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-3 py-1 rounded-full text-sm font-medium">
                       {initiative.status}
                     </span>
-                    <Leaf className="w-6 h-6 text-emerald-600" />
+                    <Leaf className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                       {initiative.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {initiative.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-gray-100">
+                  <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center justify-between">
                       <div className="text-sm text-gray-500">Impact</div>
                       <div className="font-semibold text-emerald-600">{initiative.impact}</div>
@@ -113,13 +113,13 @@ const EnvironmentalSolutions: React.FC = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Success Stories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Real-world examples of how our environmental solutions are creating 
               positive impact for communities and the planet.
             </p>
@@ -127,7 +127,7 @@ const EnvironmentalSolutions: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+              <div key={index} className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg dark:shadow-xl dark:hover:shadow-2xl dark:shadow-emerald-900/10 transition-all duration-300">
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={study.image} 
@@ -138,14 +138,14 @@ const EnvironmentalSolutions: React.FC = () => {
                 
                 <div className="p-6 space-y-6">
                   <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-gray-900">{study.title}</h3>
-                    <p className="text-gray-600">{study.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{study.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{study.description}</p>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-emerald-600">{study.metrics.communities}</div>
-                      <div className="text-sm text-gray-600">Communities</div>
+                      <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{study.metrics.communities}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Communities</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-emerald-600">{study.metrics.households}</div>
@@ -169,9 +169,9 @@ const EnvironmentalSolutions: React.FC = () => {
       </section>
 
       {/* Impact Metrics */}
-      <section className="section-padding bg-white">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
-          <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-700 dark:to-emerald-800 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">
               <h2 className="text-3xl lg:text-4xl font-bold">
                 Environmental Impact
@@ -201,13 +201,13 @@ const EnvironmentalSolutions: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Build a Sustainable Future
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Join our mission to develop and implement environmental solutions that 
               create lasting positive impact for our planet and future generations.
             </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -28,45 +29,47 @@ import ScrollRevealManager from './components/ScrollRevealManager';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <ScrollRevealManager />
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          
-          {/* Focus Areas */}
-          <Route path="/focus-areas/health-innovation" element={<HealthInnovation />} />
-          <Route path="/focus-areas/education-technology" element={<EducationTechnology />} />
-          <Route path="/focus-areas/agricultural-innovation" element={<AgriculturalInnovation />} />
-          <Route path="/focus-areas/environmental-solutions" element={<EnvironmentalSolutions />} />
-          <Route path="/focus-areas" element={<FocusAreas />} />
-          
-          {/* Services */}
-          <Route path="/services/research-evaluation" element={<ResearchEvaluation />} />
-          <Route path="/services/capacity-building" element={<CapacityBuilding />} />
-          <Route path="/services/prototyping-incubation" element={<PrototypingIncubation />} />
-          
-          {/* Other Pages */}
-          <Route path="/events" element={<Events />} />
-          <Route path="/insights" element={<InsightsPage />} />
-          <Route path="/library" element={<Library />} />
-          <Route path="/partnerships" element={<Partnerships />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          
-          {/* About Pages */}
-          <Route path="/about/our-story" element={<OurStory />} />
-          <Route path="/about/mission-vision" element={<MissionVision />} />
-          <Route path="/about/goals-objectives" element={<GoalsObjectives />} />
-          
-          {/* Contact & Donate */}
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-surface transition-colors duration-200">
+        <ScrollRevealManager />
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            
+            {/* Focus Areas */}
+            <Route path="/focus-areas/health-innovation" element={<HealthInnovation />} />
+            <Route path="/focus-areas/education-technology" element={<EducationTechnology />} />
+            <Route path="/focus-areas/agricultural-innovation" element={<AgriculturalInnovation />} />
+            <Route path="/focus-areas/environmental-solutions" element={<EnvironmentalSolutions />} />
+            <Route path="/focus-areas" element={<FocusAreas />} />
+            
+            {/* Services */}
+            <Route path="/services/research-evaluation" element={<ResearchEvaluation />} />
+            <Route path="/services/capacity-building" element={<CapacityBuilding />} />
+            <Route path="/services/prototyping-incubation" element={<PrototypingIncubation />} />
+            
+            {/* Other Pages */}
+            <Route path="/events" element={<Events />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/partnerships" element={<Partnerships />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            
+            {/* About Pages */}
+            <Route path="/about/our-story" element={<OurStory />} />
+            <Route path="/about/mission-vision" element={<MissionVision />} />
+            <Route path="/about/goals-objectives" element={<GoalsObjectives />} />
+            
+            {/* Contact & Donate */}
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

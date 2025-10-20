@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Mail, Clock, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 // Removed PrismaticEffect usage for performance / design refinement
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('utavu-theme');
-      if (stored) return stored === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    return false;
-  });
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,20 +18,6 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Apply theme to <html>
-  useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add('dark');
-      localStorage.setItem('utavu-theme', 'dark');
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('utavu-theme', 'light');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(d => !d);
 
   const focusAreas = [
     { name: 'Health Innovation', description: 'Digital health solutions and medical research', path: '/focus-areas/health-innovation' },

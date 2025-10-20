@@ -93,11 +93,11 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-xl hero-fade-in-delayed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 dark:text-white leading-relaxed max-w-xl hero-fade-in-delayed drop-shadow-lg">
                 Supporting research, prototyping and social innovation that solves local problems at scale.
               </p>
               
-              <p className="text-base sm:text-lg text-gray-600 italic hero-fade-in-delayed" style={{animationDelay:'180ms'}}>
+              <p className="text-base sm:text-lg text-gray-200 dark:text-gray-100 italic hero-fade-in-delayed drop-shadow-lg" style={{animationDelay:'180ms'}}>
                 Utavu: enabling ideas to grow
               </p>
             </div>
@@ -123,12 +123,12 @@ const Hero: React.FC = () => {
 
             {/* Trusted Partners */}
             <div className="pt-10 hero-fade-in" style={{animationDelay:'340ms'}}>
-              <p className="text-sm text-gray-500 mb-4 font-medium">Trusted by leading organizations</p>
-              <div className="flex flex-wrap items-center gap-6 opacity-60">
+              <p className="text-sm text-gray-200 dark:text-gray-100 mb-4 font-medium drop-shadow-lg">Trusted by leading organizations</p>
+              <div className="flex flex-wrap items-center gap-6 opacity-80">
                 {trustedLogos.map((logo, index) => (
                   <div 
                     key={index}
-                    className="text-sm font-medium text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+                    className="text-sm font-medium text-gray-200 dark:text-white hover:text-white dark:hover:text-gray-200 transition-colors cursor-pointer drop-shadow-lg"
                   >
                     {logo}
                   </div>
