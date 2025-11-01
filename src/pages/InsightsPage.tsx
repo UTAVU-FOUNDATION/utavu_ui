@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, User, ArrowRight, Download, BookOpen, Search, Filter } from 'lucide-react';
+import { Calendar, User, ArrowRight, Download, BookOpen, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const InsightsPage: React.FC = () => {
@@ -117,15 +117,15 @@ const InsightsPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Insights & Research
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Access our latest research findings, case studies, policy briefs, and thought leadership 
               content that drives evidence-based innovation and decision-making.
             </p>
@@ -134,20 +134,20 @@ const InsightsPage: React.FC = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
-          <div className="bg-surface rounded-2xl p-8 mb-12">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 mb-12">
             <div className="grid lg:grid-cols-3 gap-6">
               {/* Search */}
               <div className="lg:col-span-2">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-400" />
                   <input
                     type="text"
                     placeholder="Search insights and research..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -157,7 +157,7 @@ const InsightsPage: React.FC = () => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   {categories.map(category => (
                     <option key={category} value={category}>{category}</option>
@@ -173,10 +173,10 @@ const InsightsPage: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Insights</h2>
               <div className="grid lg:grid-cols-2 gap-8">
                 {featuredInsights.map((insight) => (
-                  <article 
-                    key={insight.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100"
-                  >
+                      <article 
+                        key={insight.id}
+                        className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl dark:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700"
+                      >
                     {/* Image */}
                     <div className="relative h-64 overflow-hidden">
                       <img 
@@ -185,7 +185,7 @@ const InsightsPage: React.FC = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-4 left-4 flex items-center space-x-2">
-                        <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-white/90 dark:bg-gray-900/60 backdrop-blur-sm text-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm font-medium">
                           {insight.type}
                         </span>
                         {insight.downloadable && (
@@ -203,41 +203,41 @@ const InsightsPage: React.FC = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 space-y-6">
+                      <div className="p-8 space-y-6">
                       <div className="space-y-3">
-                        <div className="flex items-center space-x-2 text-sm text-gray-500">
-                          <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                        <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                          <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 px-2 py-1 rounded text-xs font-medium">
                             {insight.category}
                           </span>
                           <span>•</span>
                           <span>{insight.readTime}</span>
                         </div>
                         
-                        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">
                           {insight.title}
                         </h3>
                         
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           {insight.excerpt}
                         </p>
                       </div>
 
                       {/* Meta */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
                         <div className="flex items-center space-x-3">
                           <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
                             <User className="w-4 h-4 text-gray-500" />
                           </div>
                           <div>
-                            <div className="text-sm font-medium text-gray-900">{insight.author}</div>
-                            <div className="text-xs text-gray-500 flex items-center space-x-1">
+                            <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{insight.author}</div>
+                            <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center space-x-1">
                               <Calendar className="w-3 h-3" />
                               <span>{formatDate(insight.date)}</span>
                             </div>
                           </div>
                         </div>
                         
-                        <button className="flex items-center space-x-1 text-blue-600 hover:text-blue-700 font-medium group-hover:space-x-2 transition-all">
+                        <button className="flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium group-hover:space-x-2 transition-all">
                           <span>Read</span>
                           <ArrowRight className="w-4 h-4" />
                         </button>
@@ -264,17 +264,17 @@ const InsightsPage: React.FC = () => {
               {filteredInsights.map((insight) => (
                 <article 
                   key={insight.id}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100"
+                  className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg dark:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
                     <img 
                       src={insight.image} 
                       alt={insight.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-3 left-3 flex items-center space-x-2">
-                      <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-white/90 dark:bg-gray-900/60 backdrop-blur-sm text-gray-700 dark:text-gray-200 px-2 py-1 rounded-full text-xs font-medium">
                         {insight.type}
                       </span>
                       {insight.downloadable && (
@@ -286,38 +286,38 @@ const InsightsPage: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 space-y-4">
+                    <div className="p-6 space-y-4">
                     <div className="space-y-3">
-                      <div className="flex items-center space-x-2 text-sm text-gray-500">
-                        <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                      <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 px-2 py-1 rounded text-xs font-medium">
                           {insight.category}
                         </span>
                         <span>•</span>
                         <span>{insight.readTime}</span>
                       </div>
                       
-                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors line-clamp-2">
                         {insight.title}
                       </h3>
                       
-                      <p className="text-gray-600 leading-relaxed line-clamp-3 text-sm">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3 text-sm">
                         {insight.excerpt}
                       </p>
                     </div>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
                       <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">
-                          <User className="w-3 h-3 text-gray-500" />
+                        <div className="w-6 h-6 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                          <User className="w-3 h-3 text-gray-500 dark:text-gray-300" />
                         </div>
                         <div>
-                          <div className="text-xs font-medium text-gray-900">{insight.author}</div>
-                          <div className="text-xs text-gray-500">{formatDate(insight.date)}</div>
+                          <div className="text-xs font-medium text-gray-900 dark:text-gray-100">{insight.author}</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">{formatDate(insight.date)}</div>
                         </div>
                       </div>
                       
-                      <button className="text-blue-600 hover:text-blue-700 p-1 rounded hover:bg-blue-50 transition-colors">
+                      <button className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 p-1 rounded hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors">
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
@@ -330,11 +330,11 @@ const InsightsPage: React.FC = () => {
           {/* No Results */}
           {filteredInsights.length === 0 && (
             <div className="text-center py-16">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-gray-400" />
+              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="w-8 h-8 text-gray-400 dark:text-gray-300" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No insights found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your search terms or category filter</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">No insights found</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Try adjusting your search terms or category filter</p>
               <button 
                 onClick={() => {
                   setSearchTerm('');
@@ -352,8 +352,8 @@ const InsightsPage: React.FC = () => {
       {/* Resource Categories */}
       <section className="section-padding bg-surface">
         <div className="container-custom">
-          <div className="bg-white rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Explore by Category</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 lg:p-12">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">Explore by Category</h3>
             <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
               {categories.slice(1).map((category, index) => (
                 <button
@@ -362,11 +362,11 @@ const InsightsPage: React.FC = () => {
                   className={`p-4 rounded-xl text-center transition-all duration-300 hover:scale-105 ${
                     selectedCategory === category
                       ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
+                      : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200'
                   }`}
                 >
-                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <BookOpen className="w-6 h-6" />
+                  <div className="w-12 h-12 bg-white/20 dark:bg-white/5 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <BookOpen className="w-6 h-6 text-gray-700 dark:text-gray-200" />
                   </div>
                   <div className="text-sm font-medium">{category}</div>
                 </button>
@@ -377,21 +377,21 @@ const InsightsPage: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Stay Updated with Latest Research
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Subscribe to our newsletter to receive the latest insights, research findings, 
               and thought leadership content directly in your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/library" className="btn-primary">
+              <Link to="/library" className="btn-primary shadow-lg shadow-blue-200/50 dark:shadow-blue-900/30">
                 Access Full Library
               </Link>
-              <button className="btn-secondary">
+              <button className="btn-secondary bg-white/95 backdrop-blur-sm shadow-md hover:shadow-lg dark:bg-gray-800 dark:shadow-blue-900/10">
                 Subscribe to Newsletter
               </button>
             </div>

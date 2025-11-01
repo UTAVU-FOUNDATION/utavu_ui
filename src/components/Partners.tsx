@@ -31,13 +31,13 @@ const Partners: React.FC<PartnersProps> = ({ onBecomePartner }) => {
   ];
 
   return (
-    <section id="partnerships" className="section-padding bg-white">
+    <section id="partnerships" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
             Our Partners & Funders
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We collaborate with leading organizations worldwide to amplify our impact and 
             create sustainable solutions for global challenges.
           </p>
@@ -48,7 +48,7 @@ const Partners: React.FC<PartnersProps> = ({ onBecomePartner }) => {
           {categories.map((category, index) => (
             <span 
               key={index}
-              className={`px-4 py-2 rounded-full text-sm font-medium ${category.color}`}
+              className={`px-4 py-2 rounded-full text-sm font-medium ${category.color} dark:bg-gray-800 dark:text-gray-200`}
             >
               {category.name}
             </span>
@@ -60,18 +60,18 @@ const Partners: React.FC<PartnersProps> = ({ onBecomePartner }) => {
           {partners.map((partner, index) => (
             <div 
               key={index}
-              className="group flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
+              className="group flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-white dark:hover:bg-gray-700 hover:shadow-md dark:hover:shadow-lg transition-all duration-300"
             >
               <div className="text-center">
-                <div className="w-16 h-16 bg-gray-200 rounded-lg mb-3 mx-auto flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                  <span className="text-2xl font-bold text-gray-400 group-hover:text-blue-600">
+                <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg mb-3 mx-auto flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                  <span className="text-2xl font-bold text-gray-400 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                     {partner.name.charAt(0)}
                   </span>
                 </div>
-                <div className="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-100 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                   {partner.name}
                 </div>
-                <div className="text-xs text-gray-500 mt-1">
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   {partner.category}
                 </div>
               </div>
@@ -80,32 +80,32 @@ const Partners: React.FC<PartnersProps> = ({ onBecomePartner }) => {
         </div>
 
         {/* Partnership Stats */}
-        <div className="bg-surface rounded-2xl p-8 lg:p-12">
+        <div className="bg-surface dark:bg-gray-800 rounded-2xl p-8 lg:p-12">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-3xl lg:text-4xl font-bold text-blue-600">50+</div>
-              <div className="text-gray-600">Active Partners</div>
+              <div className="text-gray-600 dark:text-gray-300">Active Partners</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl lg:text-4xl font-bold text-accent">20+</div>
-              <div className="text-gray-600">Countries</div>
+              <div className="text-gray-600 dark:text-gray-300">Countries</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl lg:text-4xl font-bold text-purple-600">$50M+</div>
-              <div className="text-gray-600">Funding Mobilized</div>
+              <div className="text-gray-600 dark:text-gray-300">Funding Mobilized</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl lg:text-4xl font-bold text-orange-600">100+</div>
-              <div className="text-gray-600">Joint Projects</div>
+              <div className="text-gray-600 dark:text-gray-300">Joint Projects</div>
             </div>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <button onClick={onBecomePartner} className="btn-primary mr-4">
+          <button onClick={onBecomePartner} className="btn-primary mr-4 shadow-lg shadow-blue-200/50 dark:shadow-blue-900/30">
             Become a Partner
           </button>
-          <Link to="/partnerships" className="btn-secondary">
+          <Link to="/partnerships" className="btn-secondary bg-white/95 dark:bg-gray-800 dark:shadow-blue-900/10">
             View Partnership Opportunities
           </Link>
         </div>

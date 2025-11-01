@@ -64,15 +64,15 @@ const OurStory: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-  <section className="bg-gradient-to-br from-blue-50 to-white section-padding" data-reveal data-reveal-from="bottom" data-reveal-stagger>
+  <section className="section-padding" data-reveal data-reveal-from="bottom" data-reveal-stagger>
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Our Story
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               From a small idea to a continental movement, discover how Utavu Foundation 
               has grown to become a leading force in social innovation across Africa.
             </p>
@@ -81,14 +81,14 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Origin Story */}
-  <section className="section-padding bg-white" data-reveal data-reveal-from="left" data-reveal-delay="100">
+  <section className="section-padding bg-white dark:bg-gray-900" data-reveal data-reveal-from="left" data-reveal-delay="100">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
                 Where It All Began
               </h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   In 2018, a group of researchers, innovators, and development practitioners 
                   came together with a shared vision: to create an ecosystem where innovative 
@@ -109,15 +109,15 @@ const OurStory: React.FC = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-surface rounded-2xl p-8 lg:p-12">
-                <div className="aspect-square bg-gradient-to-br from-blue-100 to-accent/20 rounded-xl flex items-center justify-center">
+              <div className="bg-surface dark:bg-gray-800 rounded-2xl p-8 lg:p-12">
+                <div className="aspect-square bg-gradient-to-br from-blue-100 to-accent/20 dark:from-gray-700 dark:to-gray-800 rounded-xl flex items-center justify-center">
                   <div className="text-center space-y-4">
                     <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
                       <Heart className="w-12 h-12 text-white" />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-gray-900">Our Foundation</h3>
-                      <p className="text-gray-600">Built on passion for impact</p>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Our Foundation</h3>
+                      <p className="text-gray-600 dark:text-gray-300">Built on passion for impact</p>
                     </div>
                   </div>
                 </div>
@@ -128,13 +128,13 @@ const OurStory: React.FC = () => {
       </section>
 
       {/* Timeline */}
-  <section className="section-padding bg-surface" data-reveal data-reveal-from="bottom" data-reveal-delay="160">
+  <section className="section-padding bg-surface dark:bg-gray-900" data-reveal data-reveal-from="bottom" data-reveal-delay="160">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Key milestones that have shaped our growth and impact over the years.
             </p>
           </div>
@@ -147,15 +147,15 @@ const OurStory: React.FC = () => {
               {milestones.map((milestone, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                   <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md dark:shadow-xl transition-shadow">
                       <div className="space-y-3">
                         <div className="flex items-center space-x-3">
                           <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                             {milestone.year}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900">{milestone.title}</h3>
-                        <p className="text-gray-600">{milestone.description}</p>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{milestone.title}</h3>
+                        <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
                       </div>
                     </div>
                   </div>

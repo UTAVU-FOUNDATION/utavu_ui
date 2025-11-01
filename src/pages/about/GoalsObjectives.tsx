@@ -98,15 +98,15 @@ const GoalsObjectives: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Goals & Objectives
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Our strategic goals and objectives provide a roadmap for creating sustainable 
               impact through research, innovation, and partnerships.
             </p>
@@ -115,13 +115,13 @@ const GoalsObjectives: React.FC = () => {
       </section>
 
       {/* 2025 Goals */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Our 2025 Goals
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Ambitious yet achievable goals that will significantly expand our impact 
               and strengthen the innovation ecosystem across Africa.
             </p>
@@ -129,7 +129,7 @@ const GoalsObjectives: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {goals2025.map((goal, index) => (
-              <div key={index} className="card group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="card group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800">
                 <div className="space-y-6">
                   <div className="flex items-start justify-between">
                     <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -146,10 +146,10 @@ const GoalsObjectives: React.FC = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                       {goal.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {goal.description}
                     </p>
                   </div>
@@ -157,10 +157,10 @@ const GoalsObjectives: React.FC = () => {
                   {/* Progress Bar */}
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Progress</span>
-                      <span className="font-medium text-gray-900">{goal.progress}%</span>
+                      <span className="text-gray-500 dark:text-gray-300">Progress</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">{goal.progress}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <div 
                         className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                         style={{ width: `${goal.progress}%` }}
@@ -175,13 +175,13 @@ const GoalsObjectives: React.FC = () => {
       </section>
 
       {/* Strategic Objectives */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Strategic Objectives
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Detailed objectives that guide our work across key areas of focus, 
               ensuring comprehensive and coordinated efforts toward our goals.
             </p>
@@ -189,14 +189,14 @@ const GoalsObjectives: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {strategicObjectives.map((category, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-md dark:shadow-xl transition-shadow">
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{category.category}</h3>
                   <div className="space-y-4">
                     {category.objectives.map((objective, objIndex) => (
                       <div key={objIndex} className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700">{objective}</p>
+                        <p className="text-gray-700 dark:text-gray-200">{objective}</p>
                       </div>
                     ))}
                   </div>
@@ -208,13 +208,13 @@ const GoalsObjectives: React.FC = () => {
       </section>
 
       {/* Impact Targets */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Impact Targets
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Measurable targets that demonstrate our commitment to creating 
               significant and lasting impact across our areas of work.
             </p>
@@ -227,12 +227,12 @@ const GoalsObjectives: React.FC = () => {
                   <target.icon className="w-8 h-8 text-accent" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-gray-900">{target.metric}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{target.metric}</h3>
                   <div className="space-y-1">
                     <div className="text-2xl font-bold text-accent">{target.target}</div>
-                    <div className="text-sm text-gray-500">Target by 2025</div>
-                    <div className="text-lg font-semibold text-gray-700">{target.current}</div>
-                    <div className="text-sm text-gray-500">Current</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-300">Target by 2025</div>
+                    <div className="text-lg font-semibold text-gray-700 dark:text-gray-200">{target.current}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-300">Current</div>
                   </div>
                 </div>
               </div>
@@ -242,7 +242,7 @@ const GoalsObjectives: React.FC = () => {
       </section>
 
       {/* Accountability */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">

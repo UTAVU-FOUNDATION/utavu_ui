@@ -64,13 +64,13 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
   };
 
   return (
-    <section id="events" className="section-padding bg-surface">
+    <section id="events" className="section-padding bg-surface dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
             Events & Programs
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Join our community of innovators through conferences, workshops, training programs, 
             and networking events designed to accelerate social impact.
           </p>
@@ -80,7 +80,7 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
           {upcomingEvents.map((event, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg dark:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group border border-gray-100 dark:border-gray-700"
             >
               {/* Header with gradient */}
               <div className={`bg-gradient-to-r ${event.color} p-6 text-white`}>
@@ -104,51 +104,51 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
                 {/* Event Details */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <Calendar className="w-5 h-5 text-gray-400" />
+                    <Calendar className="w-5 h-5 text-gray-400 dark:text-gray-300" />
                     <div>
-                      <div className="text-sm text-gray-500">Date</div>
-                      <div className="font-medium text-gray-900">{formatDate(event.date)}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Date</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{formatDate(event.date)}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-gray-400" />
+                    <Clock className="w-5 h-5 text-gray-400 dark:text-gray-300" />
                     <div>
-                      <div className="text-sm text-gray-500">Duration</div>
-                      <div className="font-medium text-gray-900">{event.time}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Duration</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{event.time}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-gray-400" />
+                    <MapPin className="w-5 h-5 text-gray-400 dark:text-gray-300" />
                     <div>
-                      <div className="text-sm text-gray-500">Location</div>
-                      <div className="font-medium text-gray-900">{event.location}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Location</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{event.location}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <Users className="w-5 h-5 text-gray-400" />
+                    <Users className="w-5 h-5 text-gray-400 dark:text-gray-300" />
                     <div>
-                      <div className="text-sm text-gray-500">Capacity</div>
-                      <div className="font-medium text-gray-900">{event.attendees}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Capacity</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{event.attendees}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {event.description}
                 </p>
 
                 {/* CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div className="text-sm text-gray-500">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
                     Registration deadline: {formatDate(event.date)}
                   </div>
                   <button 
                     onClick={() => onRegisterEvent(event.title)}
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium group-hover:space-x-3 transition-all"
+                    className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium group-hover:space-x-3 transition-all"
                   >
                     <span>Register Now</span>
                     <ArrowRight className="w-4 h-4" />
@@ -160,29 +160,29 @@ const Events: React.FC<EventsProps> = ({ onRegisterEvent }) => {
         </div>
 
         {/* Past Events & Programs */}
-        <div className="mt-16 bg-white rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Past Events Highlights</h3>
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Past Events Highlights</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center space-y-2">
               <div className="text-3xl font-bold text-blue-600">2,500+</div>
-              <div className="text-gray-600">Total Participants</div>
+              <div className="text-gray-600 dark:text-gray-300">Total Participants</div>
             </div>
             <div className="text-center space-y-2">
               <div className="text-3xl font-bold text-accent">50+</div>
-              <div className="text-gray-600">Events Hosted</div>
+              <div className="text-gray-600 dark:text-gray-300">Events Hosted</div>
             </div>
             <div className="text-center space-y-2">
               <div className="text-3xl font-bold text-utavuPurple">15</div>
-              <div className="text-gray-600">Countries Reached</div>
+              <div className="text-gray-600 dark:text-gray-300">Countries Reached</div>
             </div>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/events" className="btn-primary mr-4">
+          <Link to="/events" className="btn-primary mr-4 shadow-lg shadow-blue-200/50 dark:shadow-blue-900/30">
             View All Events
           </Link>
-          <button onClick={() => onRegisterEvent('Newsletter Updates')} className="btn-secondary">
+          <button onClick={() => onRegisterEvent('Newsletter Updates')} className="btn-secondary bg-white/95 dark:bg-gray-800 dark:shadow-blue-900/10">
             Subscribe to Updates
           </button>
         </div>

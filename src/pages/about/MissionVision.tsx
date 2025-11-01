@@ -30,15 +30,15 @@ const MissionVision: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Mission & Vision
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Our mission and vision guide everything we do, from the partnerships we forge 
               to the innovations we support and the impact we create.
             </p>
@@ -47,7 +47,7 @@ const MissionVision: React.FC = () => {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -59,13 +59,13 @@ const MissionVision: React.FC = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
                   Our Mission
                 </h2>
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-                  <p className="text-xl text-gray-800 leading-relaxed font-medium">
+                <div className="bg-blue-50 dark:bg-blue-900/30 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                  <p className="text-xl text-gray-800 dark:text-blue-100 leading-relaxed font-medium">
                     To accelerate social innovation through research, capacity building, and 
                     strategic partnerships that create lasting impact in communities worldwide.
                   </p>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   We exist to bridge the gap between innovative ideas and real-world implementation. 
                   By providing research expertise, building local capacity, and fostering strategic 
                   partnerships, we enable solutions to reach the communities that need them most.
@@ -87,7 +87,7 @@ const MissionVision: React.FC = () => {
                     <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
-                    <p className="text-gray-700">{item}</p>
+                    <p className="text-gray-700 dark:text-gray-200">{item}</p>
                   </div>
                 ))}
               </div>
@@ -97,7 +97,7 @@ const MissionVision: React.FC = () => {
       </section>
 
       {/* Vision */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="lg:order-2 space-y-8">
@@ -106,16 +106,16 @@ const MissionVision: React.FC = () => {
               </div>
               
               <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
                   Our Vision
                 </h2>
-                <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
-                  <p className="text-xl text-gray-800 leading-relaxed font-medium">
+                <div className="bg-accent/10 dark:bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
+                  <p className="text-xl text-gray-800 dark:text-accent/90 leading-relaxed font-medium">
                     A world where innovative solutions to local challenges are accessible, 
                     scalable, and sustainable for all communities.
                   </p>
                 </div>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   We envision a future where every community has access to the innovations 
                   they need to thrive, where local solutions are supported to scale globally, 
                   and where sustainable development is achieved through collaborative innovation.
@@ -147,16 +147,16 @@ const MissionVision: React.FC = () => {
       </section>
 
       {/* Guiding Principles */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
             <div className="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto">
               <Compass className="w-10 h-10 text-purple-600" />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Guiding Principles
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               The fundamental principles that shape our approach to work and guide 
               our decision-making in pursuit of our mission and vision.
             </p>
@@ -164,12 +164,12 @@ const MissionVision: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {principles.map((principle, index) => (
-              <div key={index} className="card group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="card group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">
                     {principle.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {principle.description}
                   </p>
                 </div>
@@ -180,7 +180,7 @@ const MissionVision: React.FC = () => {
       </section>
 
       {/* Impact Alignment */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-600 to-accent rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">
