@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Users, Award, Calendar, MapPin, ArrowRight } from 'lucide-react';
+import {Calendar, MapPin, ArrowRight } from 'lucide-react';
 
 const CaseStudies: React.FC = () => {
   const caseStudies = [
@@ -157,10 +157,10 @@ const CaseStudies: React.FC = () => {
       <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Case Studies
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Explore real-world examples of how our innovations are creating measurable 
               impact and transforming communities across Africa and beyond.
             </p>
@@ -169,7 +169,7 @@ const CaseStudies: React.FC = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((category, index) => (
@@ -188,10 +188,10 @@ const CaseStudies: React.FC = () => {
 
           {/* Case Studies Grid */}
           <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <div 
                 key={study.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100"
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 dark:border-gray-700"
               >
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
@@ -212,7 +212,7 @@ const CaseStudies: React.FC = () => {
                 <div className="p-8 space-y-6">
                   {/* Header */}
                   <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">
                       {study.title}
                     </h3>
                     
@@ -227,7 +227,7 @@ const CaseStudies: React.FC = () => {
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {study.description}
                     </p>
                   </div>
@@ -235,21 +235,21 @@ const CaseStudies: React.FC = () => {
                   {/* Impact Metrics */}
                   <div className="grid grid-cols-2 gap-4">
                     {Object.entries(study.impact).map(([key, value], metricIndex) => (
-                      <div key={metricIndex} className="text-center p-3 bg-gray-50 rounded-lg">
+                      <div key={metricIndex} className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                         <div className="text-xl font-bold text-blue-600">{value}</div>
-                        <div className="text-sm text-gray-600 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-300 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
                       </div>
                     ))}
                   </div>
 
                   {/* Key Outcomes */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">Key Outcomes:</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100">Key Outcomes:</h4>
                     <div className="grid grid-cols-1 gap-2">
                       {study.outcomes.slice(0, 2).map((outcome, outcomeIndex) => (
                         <div key={outcomeIndex} className="flex items-center space-x-3">
                           <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 text-sm">{outcome}</span>
+                          <span className="text-gray-700 dark:text-gray-200 text-sm">{outcome}</span>
                         </div>
                       ))}
                     </div>
@@ -270,7 +270,7 @@ const CaseStudies: React.FC = () => {
       </section>
 
       {/* Impact Summary */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">

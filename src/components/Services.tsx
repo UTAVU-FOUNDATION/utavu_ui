@@ -11,6 +11,7 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
     {
       icon: Search,
       title: 'Research & Evaluation',
+      path: '/services/research-evaluation',
       description: 'Evidence-based research, impact assessment, and data-driven insights that inform decision-making and measure success.',
       features: [
         'Baseline and endline studies',
@@ -23,6 +24,7 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
     {
       icon: Users,
       title: 'Capacity Building',
+      path: '/services/capacity-building',
       description: 'Training programs, skill development, and knowledge transfer initiatives that empower individuals and organizations.',
       features: [
         'Leadership development programs',
@@ -35,6 +37,7 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
     {
       icon: Rocket,
       title: 'Prototyping & Incubation',
+      path: '/services/prototyping-incubation',
       description: 'Innovation labs, startup support, and prototype development that transforms ideas into viable solutions.',
       features: [
         'Innovation lab facilities',
@@ -47,13 +50,13 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-white">
+    <section id="services" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
             Our Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Comprehensive support services that guide innovations from concept to implementation, 
             ensuring sustainable impact and scalable solutions.
           </p>
@@ -63,7 +66,7 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Gradient Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
@@ -76,10 +79,10 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
 
                 {/* Content */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -89,7 +92,7 @@ const Services: React.FC<ServicesProps> = ({ onScheduleConsultation }) => {
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-200 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>

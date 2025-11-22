@@ -75,23 +75,23 @@ const Donate: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-16">
+    <div className="pt-32 pb-16 bg-gradient-to-br from-red-50 via-white to-red-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-50 to-white section-padding">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="w-20 h-20 bg-red-100 rounded-2xl flex items-center justify-center mx-auto">
               <Heart className="w-10 h-10 text-red-600" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Support Our Mission
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Your donation helps us support innovators, fund critical research, and scale 
               solutions that create lasting impact in communities across Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-medium transition-colors flex items-center space-x-2">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-medium transition-colors flex items-center space-x-2 shadow-sm dark:shadow-none">
                 <Heart className="w-5 h-5" />
                 <span>Donate Now</span>
               </button>
@@ -104,13 +104,13 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Impact Areas */}
-      <section className="section-padding bg-white">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-red-50 via-white to-red-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Where Your Donation Makes Impact
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Every dollar you contribute directly supports our work in creating 
               sustainable solutions for communities in need.
             </p>
@@ -118,23 +118,23 @@ const Donate: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {impactAreas.map((area, index) => (
-              <div key={index} className="card group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="card group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800">
                 <div className="space-y-6">
                   <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <area.icon className="w-8 h-8 text-red-600" />
                   </div>
                   
                   <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                       {area.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {area.description}
                     </p>
                   </div>
 
                   <div className="pt-4 border-t border-gray-100">
-                    <p className="text-sm font-medium text-red-600">{area.impact}</p>
+                    <p className="text-sm font-medium text-red-600 dark:text-red-300">{area.impact}</p>
                   </div>
                 </div>
               </div>
@@ -144,13 +144,13 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Donation Levels */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Donation Levels
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Choose a donation level that works for you. Every contribution, 
               no matter the size, makes a meaningful difference.
             </p>
@@ -158,28 +158,28 @@ const Donate: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {donationLevels.map((level, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg dark:shadow-xl transition-all duration-300 group">
                 <div className="space-y-6">
                   <div className="text-center space-y-2">
                     <div className="text-3xl font-bold text-red-600">{level.amount}</div>
-                    <div className="text-xl font-semibold text-gray-900">{level.title}</div>
+                    <div className="text-xl font-semibold text-gray-900 dark:text-gray-100">{level.title}</div>
                   </div>
                   
-                  <p className="text-gray-600 text-center">
+                  <p className="text-gray-600 dark:text-gray-300 text-center">
                     {level.description}
                   </p>
 
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">Benefits:</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100">Benefits:</h4>
                     {level.benefits.map((benefit, benefitIndex) => (
                       <div key={benefitIndex} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm">{benefit}</span>
+                        <span className="text-gray-700 dark:text-gray-200 text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
 
-                  <button className="w-full bg-red-50 hover:bg-red-100 text-red-600 py-3 rounded-lg font-medium transition-colors group-hover:bg-red-600 group-hover:text-white">
+                  <button className="w-full bg-red-50 hover:bg-red-100 text-red-600 dark:bg-gray-700 dark:text-red-300 dark:group-hover:bg-red-600 dark:group-hover:text-white py-3 rounded-lg font-medium transition-colors group-hover:bg-red-600 group-hover:text-white">
                     Choose This Level
                   </button>
                 </div>
@@ -190,13 +190,13 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Corporate Giving */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Corporate Giving
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Partner with us through corporate giving programs that align with 
               your business objectives while creating social impact.
             </p>
@@ -204,21 +204,21 @@ const Donate: React.FC = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {corporateOptions.map((option, index) => (
-              <div key={index} className="card group hover:shadow-lg transition-all duration-300">
+              <div key={index} className="card group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800">
                 <div className="space-y-6">
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">
                     {option.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     {option.description}
                   </p>
 
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">Benefits:</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100">Benefits:</h4>
                     {option.benefits.map((benefit, benefitIndex) => (
                       <div key={benefitIndex} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm">{benefit}</span>
+                        <span className="text-gray-700 dark:text-gray-200 text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -235,7 +235,7 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Impact Statistics */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">
@@ -271,13 +271,13 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Other Ways to Give */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Other Ways to Support Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Beyond financial contributions, there are many ways you can 
               support our mission and amplify our impact.
             </p>
@@ -288,8 +288,8 @@ const Donate: React.FC = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto">
                 <Users className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Volunteer</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Volunteer</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Share your skills and expertise by volunteering with our programs and initiatives.
               </p>
             </div>
@@ -298,8 +298,8 @@ const Donate: React.FC = () => {
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto">
                 <Award className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">In-Kind Donations</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">In-Kind Donations</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Donate equipment, software, or services that support our research and innovation work.
               </p>
             </div>
@@ -308,8 +308,8 @@ const Donate: React.FC = () => {
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto">
                 <TrendingUp className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Spread the Word</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Spread the Word</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Help us reach more people by sharing our work and mission with your networks.
               </p>
             </div>
@@ -318,13 +318,13 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
               Ready to Make a Difference?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Join thousands of supporters who are helping us create lasting change 
               through innovation and research. Every contribution matters.
             </p>
@@ -337,7 +337,7 @@ const Donate: React.FC = () => {
                 Contact Us
               </button>
             </div>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-gray-500 dark:text-gray-400">
               Secure donation processing • Tax-deductible receipts available • 100% of donations go to programs
             </div>
           </div>

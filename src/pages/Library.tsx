@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Download, Calendar, User, BookOpen, FileText, Award, TrendingUp } from 'lucide-react';
+import { Search, Download, Calendar, User, BookOpen, FileText, Award, TrendingUp } from 'lucide-react';
 
 const Library: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -140,10 +140,10 @@ const Library: React.FC = () => {
       <section className="bg-gradient-to-br from-blue-50 to-white section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100">
               Resource Library
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               Access our comprehensive collection of research reports, case studies, policy briefs, 
               and technical guides that drive evidence-based innovation and decision-making.
             </p>
@@ -152,9 +152,9 @@ const Library: React.FC = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
-          <div className="bg-surface rounded-2xl p-8 mb-12">
+          <div className="bg-surface dark:bg-gray-800 rounded-2xl p-8 mb-12">
             <div className="grid lg:grid-cols-4 gap-6">
               {/* Search */}
               <div className="lg:col-span-2">
@@ -165,7 +165,7 @@ const Library: React.FC = () => {
                     placeholder="Search resources..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -175,7 +175,7 @@ const Library: React.FC = () => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   {categories.map(category => (
                     <option key={category} value={category}>{category}</option>
@@ -188,7 +188,7 @@ const Library: React.FC = () => {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   {resourceTypes.map(type => (
                     <option key={type} value={type}>{type}</option>
@@ -200,7 +200,7 @@ const Library: React.FC = () => {
 
           {/* Results Count */}
           <div className="mb-8">
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Showing {filteredResources.length} of {resources.length} resources
             </p>
           </div>
@@ -213,7 +213,7 @@ const Library: React.FC = () => {
                 {featuredResources.map((resource) => {
                   const IconComponent = getTypeIcon(resource.type);
                   return (
-                    <div key={resource.id} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
+                    <div key={resource.id} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700">
                       <div className="space-y-6">
                         <div className="flex items-start justify-between">
                           <div className="flex items-center space-x-3">
@@ -221,7 +221,7 @@ const Library: React.FC = () => {
                               <IconComponent className="w-6 h-6 text-blue-600" />
                             </div>
                             <div>
-                              <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                              <span className="bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">
                                 {resource.type}
                               </span>
                               <div className="text-sm text-gray-500 mt-1">{resource.category}</div>
@@ -233,10 +233,10 @@ const Library: React.FC = () => {
                         </div>
 
                         <div className="space-y-3">
-                          <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                            {resource.title}
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors">
+                              {resource.title}
                           </h3>
-                          <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                             {resource.description}
                           </p>
                         </div>
@@ -245,11 +245,11 @@ const Library: React.FC = () => {
                           <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-2">
                               <User className="w-4 h-4 text-gray-400" />
-                              <span className="text-sm text-gray-600">{resource.author}</span>
+                              <span className="text-sm text-gray-600 dark:text-gray-300">{resource.author}</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               <Calendar className="w-4 h-4 text-gray-400" />
-                              <span className="text-sm text-gray-600">{formatDate(resource.date)}</span>
+                              <span className="text-sm text-gray-600 dark:text-gray-300">{formatDate(resource.date)}</span>
                             </div>
                           </div>
                           <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium">
@@ -274,14 +274,14 @@ const Library: React.FC = () => {
               {filteredResources.map((resource) => {
                 const IconComponent = getTypeIcon(resource.type);
                 return (
-                  <div key={resource.id} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                  <div key={resource.id} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
                           <IconComponent className="w-5 h-5 text-gray-600" />
                         </div>
                         <div>
-                          <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm font-medium">
+                          <span className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-sm font-medium">
                             {resource.type}
                           </span>
                           <div className="text-xs text-gray-500 mt-1">{resource.category}</div>
@@ -289,18 +289,18 @@ const Library: React.FC = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors line-clamp-2">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors line-clamp-2">
                           {resource.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
                           {resource.description}
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
                         <div className="space-y-1">
-                          <div className="text-sm font-medium text-gray-900">{resource.author}</div>
-                          <div className="text-xs text-gray-500">{formatDate(resource.date)} • {resource.readTime}</div>
+                          <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{resource.author}</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-300">{formatDate(resource.date)} • {resource.readTime}</div>
                         </div>
                         <button className="text-blue-600 hover:text-blue-700 p-2 rounded-lg hover:bg-blue-50 transition-colors">
                           <Download className="w-4 h-4" />
@@ -316,11 +316,11 @@ const Library: React.FC = () => {
           {/* No Results */}
           {filteredResources.length === 0 && (
             <div className="text-center py-16">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-gray-400" />
+              <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="w-8 h-8 text-gray-400 dark:text-gray-300" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No resources found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your search terms or filters</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">No resources found</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Try adjusting your search terms or filters</p>
               <button 
                 onClick={() => {
                   setSearchTerm('');
@@ -337,7 +337,7 @@ const Library: React.FC = () => {
       </section>
 
       {/* Statistics */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-surface dark:bg-gray-900">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="text-center space-y-8">

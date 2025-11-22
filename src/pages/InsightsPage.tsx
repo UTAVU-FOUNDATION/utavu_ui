@@ -355,7 +355,7 @@ const InsightsPage: React.FC = () => {
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">Explore by Category</h3>
             <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {categories.slice(1).map((category, index) => (
+              {categories.slice(1).map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}

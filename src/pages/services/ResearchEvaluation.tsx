@@ -78,7 +78,7 @@ const ResearchEvaluation: React.FC = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="section-padding bg-white dark:bg-gray-900 backdrop-blur-sm">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
@@ -149,7 +149,7 @@ const ResearchEvaluation: React.FC = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-white dark:bg-gray-900 backdrop-blur-sm">
+      <section className="section-padding backdrop-blur-sm">{/*"section-padding bg-white dark:bg-gray-900 backdrop-blur-sm"*/}
         <div className="container-custom">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
@@ -232,7 +232,7 @@ const ResearchEvaluation: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-white dark:bg-gray-900 backdrop-blur-sm">
+      <section className="section-padding backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">

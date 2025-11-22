@@ -62,27 +62,27 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
   };
 
   return (
-    <section id="insights" className="section-padding bg-white">
+    <section id="insights" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">
             Insights & Resources
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Access our latest research findings, case studies, policy briefs, and thought leadership 
             content that drives evidence-based innovation and decision-making.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category, index) => (
             <button 
               key={index}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 index === 0 
                   ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
               }`}
             >
               {category}
@@ -91,11 +91,11 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
         </div>
 
         {/* Featured Insights */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {insights.map((insight, index) => (
             <article 
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100"
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100 dark:border-gray-700"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -105,7 +105,7 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 flex items-center space-x-2">
-                  <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-white/90 backdrop-blur-sm text-gray-700 dark:bg-white/10 dark:text-gray-200 px-3 py-1 rounded-full text-sm font-medium">
                     {insight.type}
                   </span>
                   {insight.downloadable && (
@@ -118,34 +118,34 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
+                <div className="p-6 space-y-4">
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs font-medium">
                       {insight.category}
                     </span>
                     <span>•</span>
                     <span>{insight.readTime}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors line-clamp-2">
                     {insight.title}
                   </h3>
                   
-                  <p className="text-gray-600 leading-relaxed line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3">
                     {insight.excerpt}
                   </p>
                 </div>
 
                 {/* Meta */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-                      <User className="w-4 h-4 text-gray-500" />
+                    <div className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                      <User className="w-4 h-4 text-gray-500 dark:text-gray-300" />
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-gray-900">{insight.author}</div>
-                      <div className="text-xs text-gray-500 flex items-center space-x-1">
+                      <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{insight.author}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center space-x-1">
                         <Calendar className="w-3 h-3" />
                         <span>{formatDate(insight.date)}</span>
                       </div>
@@ -163,16 +163,16 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
         </div>
 
         {/* Resource Categories */}
-        <div className="bg-surface rounded-2xl p-8 lg:p-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Resource Library</h3>
+        <div className="bg-surface dark:bg-gray-900 rounded-2xl p-8 lg:p-12">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">Resource Library</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
                 <BookOpen className="w-8 h-8 text-blue-600" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">25+</div>
-                <div className="text-gray-600">Research Reports</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">25+</div>
+                <div className="text-gray-600 dark:text-gray-300">Research Reports</div>
               </div>
             </div>
             
@@ -180,9 +180,9 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
               <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto">
                 <Download className="w-8 h-8 text-green-600" />
               </div>
-              <div>
-                <div className="text-2xl font-bold text-gray-900">40+</div>
-                <div className="text-gray-600">Case Studies</div>
+                <div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">40+</div>
+                <div className="text-gray-600 dark:text-gray-300">Case Studies</div>
               </div>
             </div>
             
@@ -191,8 +191,8 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
                 <User className="w-8 h-8 text-purple-600" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">15+</div>
-                <div className="text-gray-600">Policy Briefs</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">15+</div>
+                <div className="text-gray-600 dark:text-gray-300">Policy Briefs</div>
               </div>
             </div>
             
@@ -201,8 +201,8 @@ const Insights: React.FC<InsightsProps> = ({ onSubscribe }) => {
                 <Calendar className="w-8 h-8 text-orange-600" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-gray-900">Monthly</div>
-                <div className="text-gray-600">New Content</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">Monthly</div>
+                <div className="text-gray-600 dark:text-gray-300">New Content</div>
               </div>
             </div>
           </div>

@@ -181,7 +181,7 @@ const Hero: React.FC = () => {
             <path d="M0 180 C 220 130 440 130 660 180 C 880 230 1100 230 1320 180 C 1380 165 1410 170 1440 180 L1440 260 L0 260 Z" fill="url(#dividerGradient)" opacity="0.25" />
         </svg>
         {/* White fade to blend into next section background */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none bg-gradient-to-b from-white/0 to-white" />
+        <div className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none bg-gradient-to-b from-white/0 to-white dark:from-transparent dark:to-[var(--bg)]" />
       </div>
     </section>
   );
