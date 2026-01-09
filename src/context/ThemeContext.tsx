@@ -24,8 +24,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Initialize theme from localStorage or system preference
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('utavu-theme');
-      if (stored) return stored === 'dark';
+      try {
+        const stored = localStorage.getItem('utavu-theme');
+        if (stored) return stored === 'dark';
+      } catch (error) {
+        console.warn('Failed to access localStorage:', error);
+      }
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     return false;
@@ -36,10 +40,18 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const root = document.documentElement;
     if (isDark) {
       root.classList.add('dark');
-      localStorage.setItem('utavu-theme', 'dark');
+      try {
+        localStorage.setItem('utavu-theme', 'dark');
+      } catch (error) {
+        console.warn('Failed to save theme preference:', error);
+      }
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('utavu-theme', 'light');
+      try {
+        localStorage.setItem('utavu-theme', 'light');
+      } catch (error) {
+        console.warn('Failed to save theme preference:', error);
+      }
     }
   }, [isDark]);
 
@@ -47,7 +59,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('utavu-theme')) {
+      try {
+        if (!localStorage.getItem('utavu-theme')) {
+          setIsDark(e.matches);
+        }
+      } catch (error) {
+        // If localStorage is unavailable, still update based on system preference
         setIsDark(e.matches);
       }
     };

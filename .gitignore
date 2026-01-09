@@ -28,4 +28,6 @@ dist-ssr
 .bolt/**
 /.bolt/
 
+IMPROVEMENTS.md
+
 COLOR-RIBBON-UPDATES.md
