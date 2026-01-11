@@ -41,7 +41,7 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>info@utavu.org</span>
+                <span>info@utavufoundation.co.ke</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />
@@ -53,12 +53,11 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main Header */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'glass-effect shadow-xl' 
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            ? 'glass-effect shadow-xl'
             : 'bg-transparent'
-        }`}
+          }`}
         style={{ top: isScrolled ? '0' : '40px' }}
       >
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,9 +65,9 @@ const Header: React.FC = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/">
-                <img 
-                  src="/Screenshot from 2025-09-13 09-59-58.png" 
-                  alt="Utavu Foundation" 
+                <img
+                  src="/Screenshot from 2025-09-13 09-59-58.png"
+                  alt="Utavu Foundation"
                   className="h-14 w-auto hover:scale-105 transition-transform duration-300"
                 />
               </Link>
@@ -77,7 +76,7 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {/* Focus Areas Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('focus')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -103,7 +102,7 @@ const Header: React.FC = () => {
               </div>
 
               {/* Services Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('services')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -132,9 +131,9 @@ const Header: React.FC = () => {
               <Link to="/events" className="nav-link">Events / Programs</Link>
               <Link to="/partnerships" className="nav-link">Partnerships</Link>
               <Link to="/testimonials" className="nav-link">Testimonials</Link>
-              
+
               {/* About Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('about')}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -170,7 +169,7 @@ const Header: React.FC = () => {
               <Link
                 to="/contact"
                 className="btn-primary bg-gradient-to-r from-utavu-purple to-utavu-green shadow-md hover:shadow-xl hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-utavuPurple/30 whitespace-nowrap"
-                style={{backgroundImage:'linear-gradient(120deg,var(--utavu-purple) 0%,var(--utavu-green) 100%)'}}
+                style={{ backgroundImage: 'linear-gradient(120deg,var(--utavu-purple) 0%,var(--utavu-green) 100%)' }}
               >
                 Partner with Us
               </Link>
@@ -196,16 +195,16 @@ const Header: React.FC = () => {
           </div>
         </div>
       </header>
-      
+
       {/* Mobile Menu - Outside Header */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-y-0 right-0 w-80 glass-modal shadow-2xl z-[9999] overflow-y-auto">
           <div className="p-6">
             <div className="flex items-center justify-between mb-8">
               <Link to="/">
-                <img 
-                  src="/Screenshot from 2025-09-13 09-59-58.png" 
-                  alt="Utavu Foundation" 
+                <img
+                  src="/Screenshot from 2025-09-13 09-59-58.png"
+                  alt="Utavu Foundation"
                   className="h-12 w-auto"
                 />
               </Link>
@@ -223,7 +222,7 @@ const Header: React.FC = () => {
                   </Link>
                 ))}
               </div>
-              
+
               <div className="space-y-2">
                 <div className="font-medium text-gray-900">Our Services</div>
                 {services.map((service) => (
@@ -232,19 +231,19 @@ const Header: React.FC = () => {
                   </Link>
                 ))}
               </div>
-              
+
               <Link to="/insights" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Insights</Link>
               <Link to="/events" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Events / Programs</Link>
               <Link to="/partnerships" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Partnerships</Link>
               <Link to="/testimonials" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</Link>
-              
+
               <div className="space-y-2">
                 <div className="font-medium text-gray-900">About Us</div>
                 <Link to="/about/our-story" className="block py-3 pl-4 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Our Story</Link>
                 <Link to="/about/mission-vision" className="block py-3 pl-4 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Mission & Vision</Link>
                 <Link to="/about/goals-objectives" className="block py-3 pl-4 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Goals & Objectives</Link>
               </div>
-              
+
               <Link to="/donate" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Donate</Link>
               <Link to="/contact" className="block py-3 text-gray-700 hover:text-blue-600 hover:bg-white/30 rounded-lg transition-all duration-300 font-medium" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
             </nav>
@@ -256,7 +255,7 @@ const Header: React.FC = () => {
               <div className="text-sm text-gray-600 space-y-2">
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@utavu.org</span>
+                  <span>info@utavufoundation.co.ke</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
@@ -267,10 +266,10 @@ const Header: React.FC = () => {
           </div>
         </div>
       )}
-      
+
       {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="lg:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-[9998]"
           onClick={() => setIsMobileMenuOpen(false)}
         />

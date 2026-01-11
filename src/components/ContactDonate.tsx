@@ -40,7 +40,7 @@ const ContactDonate: React.FC = () => {
             Partner with Us
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to create meaningful impact together? Let's discuss how we can collaborate 
+            Ready to create meaningful impact together? Let's discuss how we can collaborate
             to drive innovation and solve challenges in your community.
           </p>
         </div>
@@ -51,7 +51,7 @@ const ContactDonate: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">Start a Conversation</h3>
               <p className="text-gray-300">
-                Tell us about your organization and how you'd like to partner with us. 
+                Tell us about your organization and how you'd like to partner with us.
                 We'll get back to you within 24 hours.
               </p>
             </div>
@@ -73,7 +73,7 @@ const ContactDonate: React.FC = () => {
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                     Email Address *
@@ -164,11 +164,10 @@ const ContactDonate: React.FC = () => {
                   <Mail className="w-6 h-6 text-accent mt-1" />
                   <div>
                     <div className="font-medium">Email</div>
-                    <div className="text-gray-300">info@utavu.org</div>
-                    <div className="text-gray-300">partnerships@utavu.org</div>
+                    <div className="text-gray-300">info@utavufoundation.co.ke</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-accent mt-1" />
                   <div>
@@ -177,14 +176,14 @@ const ContactDonate: React.FC = () => {
                     <div className="text-sm text-gray-400">Mon–Fri 8:00–17:00 EAT</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-accent mt-1" />
                   <div>
                     <div className="font-medium">Office</div>
                     <div className="text-gray-300">
-                      Innovation Hub, University Way<br />
-                      Nairobi, Kenya
+                      Lake Basin Mall, Kisumu Kakamega Road<br />
+                      Kisumu
                     </div>
                   </div>
                 </div>
@@ -197,11 +196,11 @@ const ContactDonate: React.FC = () => {
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">Support Our Mission</h3>
                   <p className="text-gray-300">
-                    Your donation helps us support more innovators, fund critical research, 
+                    Your donation helps us support more innovators, fund critical research,
                     and scale solutions that create lasting impact in communities.
                   </p>
                 </div>
@@ -210,7 +209,7 @@ const ContactDonate: React.FC = () => {
                   <button className="w-full bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-lg font-medium transition-colors">
                     Donate Now
                   </button>
-                  
+
                   <div className="text-sm text-gray-400">
                     Secure donation processing • Tax-deductible receipts available
                   </div>
