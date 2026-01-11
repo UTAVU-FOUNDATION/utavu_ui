@@ -2,11 +2,11 @@
 
 A modern, responsive web platform for the Utavu Foundation, dedicated to supporting research, prototyping, and social innovation that solves local problems at scale.
 
-## 🌟 About Utavu Foundation
+## About Utavu Foundation
 
 Utavu Foundation enables ideas to grow by providing research, evaluation, and innovation support across multiple focus areas including health, education, agriculture, and environmental solutions.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend Framework:** React 18.3+ with TypeScript
 - **Build Tool:** Vite 7.1+
@@ -16,7 +16,7 @@ Utavu Foundation enables ideas to grow by providing research, evaluation, and in
 - **Backend:** Supabase (for data management)
 - **Deployment:** Static hosting (compatible with Vercel, Netlify, GitHub Pages)
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 version_1/
@@ -79,14 +79,14 @@ version_1/
    
    The application will be available at `http://localhost:5173`
 
-## 📜 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Create production build
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint to check code quality
 
-## 🎨 Features
+## Features
 
 ### Core Features
 - **Responsive Design** - Mobile-first approach, works on all devices
@@ -117,7 +117,7 @@ version_1/
 - Donation Platform
 - Contact Forms
 
-## 🌐 Deployment
+## Deployment
 
 ### Build for Production
 
@@ -158,7 +158,7 @@ npm run build
 # Upload the dist/ folder to your gh-pages branch
 ```
 
-## 🧪 Testing
+## Testing
 
 The project uses Vitest for unit testing (to be implemented):
 
@@ -168,7 +168,7 @@ npm run test:ui       # Run tests with UI
 npm run coverage      # Generate coverage report
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Theme Colors
 
@@ -186,7 +186,7 @@ Theme colors are defined in `tailwind.config.js`. The main brand colors are:
 3. Add route with `RouteErrorBoundary` wrapper
 4. Update Header navigation if needed
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
@@ -200,20 +200,20 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
-## 📄 License
+## License
 
 Copyright © 2024 Utavu Foundation. All rights reserved.
 
-## 📞 Contact
+## Contact
 
 - **Website:** [https://utavufoundation.co.ke](https://utavufoundation.co.ke)
 - **Email:** Contact us through the website
 - **Location:** Kenya
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with passion to support innovation and research across Africa.
 
 ---
 
-**Utavu Foundation** - Enabling ideas to grow 🌱
+**Utavu Foundation** - Enabling ideas to grow 
